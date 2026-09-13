@@ -1,0 +1,58 @@
+generated: '2026-09-13'
+method: probed
+source: https://myingredion.com/.well-known/openid-configuration
+note: >-
+  Ingredion publishes no developer portal, no API reference and no OpenAPI, so there are no
+  securitySchemes to derive from. The ONLY machine-readable authentication description the
+  company serves anonymously is the OpenID Connect discovery document on its MyIngredion
+  customer portal. Everything below is read verbatim from that document — nothing is inferred.
+  This describes access to the CUSTOMER PORTAL, not to a published Ingredion API product.
+operator: >-
+  The portal runs on Salesforce Experience Cloud under Ingredion's own domain and Salesforce
+  org (00D30000000MNMR). The issuer, and every endpoint, is https://myingredion.com — an
+  Ingredion-controlled host — but the authentication surface itself is Salesforce platform
+  infrastructure, not an Ingredion-authored contract.
+schemes:
+  - id: openIdConnect
+    type: openIdConnect
+    openIdConnectUrl: https://myingredion.com/.well-known/openid-configuration
+    issuer: https://myingredion.com
+    description: OpenID Connect 1.0 on the MyIngredion customer portal.
+    endpoints:
+      authorization: https://myingredion.com/services/oauth2/authorize
+      token: https://myingredion.com/services/oauth2/token
+      userinfo: https://myingredion.com/services/oauth2/userinfo
+      revocation: https://myingredion.com/services/oauth2/revoke
+      introspection: https://myingredion.com/services/oauth2/introspect
+      registration: https://myingredion.com/services/oauth2/register
+      end_session: https://myingredion.com/services/auth/idp/oidc/logout
+      jwks_uri: https://myingredion.com/id/keys
+  - id: oauth2
+    type: oauth2
+    flows:
+      authorizationCode:
+        authorizationUrl: https://myingredion.com/services/oauth2/authorize
+        tokenUrl: https://myingredion.com/services/oauth2/token
+        refreshUrl: https://myingredion.com/services/oauth2/token
+    description: >-
+      OAuth 2.0 authorization code with refresh. grant_types_supported declares ONLY
+      authorization_code and refresh_token — there is no client_credentials grant, so there
+      is no documented machine-to-machine path for an agent or a customer's own system.
+characteristics:
+  grant_types_supported: [authorization_code, refresh_token]
+  response_types_supported: [code, token, token id_token]
+  token_endpoint_auth_methods_supported: [client_secret_post, client_secret_basic, private_key_jwt]
+  code_challenge_methods_supported: [S256]
+  pkce: true
+  dpop_supported: true
+  dpop_signing_alg_values_supported: [RS256, RS384, RS512, ES256, ES384, ES512, EdDSA]
+  id_token_signing_alg_values_supported: [RS256]
+  subject_types_supported: [public]
+  dynamic_client_registration: true
+  frontchannel_logout_supported: true
+api_keys: false
+mtls: false
+docs: null
+docs_note: >-
+  No public authentication documentation exists. Ingredion publishes no developer portal;
+  the portal sign-in at https://myingredion.com/s/login/ is customer-account only.

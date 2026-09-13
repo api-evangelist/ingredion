@@ -1,6 +1,7 @@
-generated: '2026-07-11'
+generated: '2026-09-13'
 method: probed
-source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts; MyIngredion portal host added by the enrichment
+  pass
 hosts:
 - host: www.ingredion.com
   https: true
@@ -8,6 +9,18 @@ hosts:
   cert_expires: Dec  5 23:59:59 2026 GMT
   hsts: true
   hsts_max_age: 31557600
+- host: myingredion.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 21 23:59:59 2026 GMT
+  cert_subject_o: Ingredion Incorporated
+  cert_subject_cn: myingredion.com
+  hsts: true
+  hsts_max_age: 63072000
+  hsts_include_subdomains: true
+  hsts_preload: true
+  note: MyIngredion customer portal (Salesforce Experience Cloud). TLS certificate is issued to O=Ingredion
+    Incorporated, L=Westchester, ST=Illinois — first-party ownership confirmed.
 domains:
 - domain: ingredion.com
   dnssec: false
@@ -15,3 +28,11 @@ domains:
   spf: true
   dmarc: true
   dmarc_policy: none
+- domain: myingredion.com
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+  dmarc_policy: null
+  note: 'Portal-only domain: no SPF, DMARC, CAA or DS records published. Mail for the company is sent
+    from ingredion.com, which does publish SPF and DMARC.'

@@ -1,0 +1,112 @@
+generated: '2026-09-13'
+method: probed
+source: live anonymous HTTP probes of every host this record knows
+note: 'Ingredion publishes no developer portal and no API host, so the host list here is the registrable
+  domain plus the customer-portal hosts the corporate site and DNS lead to. ONE real document was served:
+  an OpenID Connect discovery document at https://myingredion.com/.well-known/openid-configuration (issuer
+  https://myingredion.com). Every other 200 on myingredion.com is the Salesforce Experience Cloud single-page-app
+  catch-all returning the ~152KB portal HTML shell for any unknown path — those are recorded as misses
+  (soft_404: true), not as documents. www.ingredion.com / ingredion.com return hard 404s on every path.'
+ownership: myingredion.com is Ingredion's own customer portal. my.ingredion.com (an ingredion.com subdomain)
+  and www.myingredion.com both CNAME to the SAME Salesforce Experience Cloud site, www.myingredion.com.00d30000000mnmrea2.live.siteforce.com,
+  so the portal domain resolves to the same Salesforce org as the corporate subdomain. The corporate site
+  describes the portal at https://www.ingredion.com/na/en-us/company/expertise/myingredion. The TLS certificate
+  served by myingredion.com is issued to O=Ingredion Incorporated, L=Westchester, ST=Illinois (CN=myingredion.com),
+  which confirms first-party ownership directly.
+hosts:
+- host: www.ingredion.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: ingredion.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: myingredion.com
+  note: Salesforce Experience Cloud customer portal (MyIngredion). SPA catch-all answers 200 with the
+    portal HTML shell for unknown paths.
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: ingredion-openid-configuration.json
+    content_type: application/json;charset=UTF-8
+    bytes: 2557
+    issuer: https://myingredion.com
+  - path: /.well-known/security.txt
+    status: 200
+    soft_404: true
+    note: 151905-byte portal HTML shell, not a security.txt — treated as a miss.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    soft_404: true
+    note: 152023-byte portal HTML shell — treated as a miss.
+  - path: /.well-known/api-catalog
+    status: 200
+    soft_404: true
+    note: 151914-byte portal HTML shell — treated as a miss.
+  - path: /.well-known/agent-card.json
+    status: 200
+    soft_404: true
+    note: 151926-byte portal HTML shell, not an AgentCard — rejected per the A2A probe rule.
+  - path: /.well-known/agent.json
+    status: 200
+    soft_404: true
+    note: 151899-byte portal HTML shell — rejected.
+- host: www.myingredion.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: Same document as myingredion.com with endpoints rewritten to the www host (issuer https://www.myingredion.com).
+      Not saved separately — it is the same Salesforce org (00D30000000MNMR) behind both names.
+  - path: /.well-known/security.txt
+    status: 200
+    soft_404: true
+  - path: /.well-known/agent-card.json
+    status: 200
+    soft_404: true
+- host: ag.ingredion.com
+  note: Ingredion agricultural grower site (separate origin, hard 404s).
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+security_txt: false
+api_catalog: false
+agent_card: false

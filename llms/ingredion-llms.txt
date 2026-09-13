@@ -1,0 +1,68 @@
+# Ingredion
+
+> Ingredion Incorporated is a Fortune 500 global ingredient solutions provider that turns
+> grains, fruits, vegetables and other plant materials into starches, sweeteners, plant-based
+> proteins, texturizers and clean-label systems for food, beverage, brewing, pharmaceutical
+> and industrial manufacturers in more than 120 countries.
+
+This file is maintained by API Evangelist (https://apievangelist.com) as part of an
+independent, third-party profile of Ingredion's PUBLIC API surface. It is NOT published by
+Ingredion, and Ingredion does not serve an llms.txt of its own at ingredion.com/llms.txt
+(HTTP 404, checked 2026-09-13).
+
+## API surface
+
+Ingredion publishes no developer program, no API portal, no API reference and no
+machine-readable API contract. As of 2026-09-13 the following were probed and returned
+nothing: OpenAPI/Swagger at the corporate and portal hosts, GraphQL, AsyncAPI, WSDL, gRPC,
+MCP `tools/list`, and A2A agent cards. No first-party SDK exists in any public package
+registry, and the GitHub organization has no public repositories.
+
+The only anonymously readable machine-readable document Ingredion serves is an OpenID Connect
+discovery document on its customer portal:
+
+- [OpenID Connect discovery](https://myingredion.com/.well-known/openid-configuration):
+  issuer `https://myingredion.com`, authorization-code + refresh-token grants only, PKCE
+  (S256) and DPoP supported. It describes sign-in to the MyIngredion customer portal, not
+  access to any published API product.
+
+## Customer portal
+
+- [MyIngredion overview](https://www.ingredion.com/na/en-us/company/expertise/myingredion):
+  what the portal does — order placement, order tracking, document access, support cases, and
+  an AI assistant ("Ask Ingredion") for product and formulation questions.
+- [MyIngredion sign-in](https://myingredion.com/s/login/): customer accounts only. There is no
+  self-service developer signup and no documented machine-to-machine credential path — the
+  discovery document declares no `client_credentials` grant.
+
+## Company
+
+- [Ingredion](https://www.ingredion.com): corporate site and product catalog.
+- [News](https://www.ingredion.com/na/en-us/news-events/news): company newsroom.
+- [Contact](https://www.ingredion.com/na/en-us/company/contact): the only route to a technical
+  or integration conversation.
+- [Privacy policy](https://www.ingredion.com/na/en-us/legal/privacy-policy)
+- [Sales terms and conditions](https://www.ingredion.com/na/en-us/legal/sales-terms-and-conditions)
+- [GitHub organization](https://github.com/Ingredion): exists since 2016, zero public repositories.
+
+## Profile artifacts
+
+These are API Evangelist's own records of what was probed and what was found:
+
+- [apis.yml](apis.yml): the machine-readable company profile.
+- [Well-known probe](well-known/ingredion-well-known.yml): every path probed on every host.
+- [OpenID Connect discovery](well-known/ingredion-openid-configuration.json): saved verbatim.
+- [Authentication](authentication/ingredion-authentication.yml): read from the discovery document.
+- [OAuth scopes](scopes/ingredion-scopes.yml): the 36 scopes the portal advertises.
+- [Conformance](conformance/ingredion-conformance.yml): standards asserted, with evidence.
+- [Packages](packages/ingredion-packages.yml): registries searched, zero SDKs found.
+- [Plans](plans/ingredion-plans-pricing.yml): no public API pricing.
+- [Rate limits](rate-limits/ingredion-rate-limits.yml): none published.
+- [Domain security](security/ingredion-domain-security.yml): TLS/HSTS/SPF/DMARC probe.
+
+## Notes for agents
+
+There is nothing here for an agent to call. Ingredion's ordering and support surface is behind
+a customer login on a Salesforce Experience Cloud portal, and no public contract describes it.
+An integration conversation has to start with a human at
+https://www.ingredion.com/na/en-us/company/contact.

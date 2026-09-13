@@ -1,0 +1,40 @@
+generated: '2026-09-13'
+method: searched
+source: >-
+  registry.npmjs.org search, pypi.org, rubygems.org, crates.io, packagist.org,
+  azuresearch-usnc.nuget.org, and https://api.github.com/orgs/Ingredion/repos
+note: >-
+  Searched every public registry for a first-party Ingredion client library. NONE EXISTS.
+  npm search "ingredion" returns 0 results; pypi.org/pypi/ingredion/json returns 404;
+  RubyGems, crates.io and NuGet all return 0 matches; Packagist returns only unrelated
+  third-party packages. The GitHub organization https://github.com/Ingredion exists
+  (created 2016-05-04) but has public_repos: 0, so there is no source distribution either.
+  Ingredion publishes no API and therefore no SDK — this is a recorded absence, not a gap
+  in the search. No SDKs pointer is emitted.
+package_count: 0
+official_package_count: 0
+packages: []
+registries_checked:
+  - registry: npm
+    query: https://registry.npmjs.org/-/v1/search?text=ingredion
+    results: 0
+  - registry: pypi
+    query: https://pypi.org/pypi/ingredion/json
+    status: 404
+  - registry: rubygems
+    query: https://rubygems.org/api/v1/search.json?query=ingredion
+    results: 0
+  - registry: crates.io
+    query: https://crates.io/api/v1/crates?q=ingredion
+    results: 0
+  - registry: nuget
+    query: https://azuresearch-usnc.nuget.org/query?q=ingredion
+    results: 0
+  - registry: packagist
+    query: https://packagist.org/search.json?q=ingredion
+    results: 0
+    detail: Matches returned are unrelated third-party packages, none from Ingredion.
+  - registry: github
+    query: https://api.github.com/orgs/Ingredion/repos
+    results: 0
+    detail: Organization exists but publishes no public repositories.

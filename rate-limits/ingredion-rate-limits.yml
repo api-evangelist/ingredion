@@ -1,0 +1,21 @@
+generated: '2026-09-13'
+method: searched
+source: https://www.ingredion.com/sitemap.xml
+note: >-
+  No rate limits are published, because no API is published. Ingredion serves no developer
+  portal, no API reference and no machine-readable contract on any host probed, so there are
+  no documented quotas, windows, burst allowances or 429 response headers to record. The one
+  anonymously reachable machine surface — the MyIngredion OpenID Connect discovery document —
+  carries no rate-limit metadata. An honest zero.
+limit_count: 0
+rate_limits: []
+headers: []
+retry_after: null
+status_on_exhaustion: null
+evidence:
+  - url: https://www.ingredion.com/sitemap.xml
+    status: 200
+    detail: 2,898 URLs; no developer, API or rate-limit documentation page exists.
+  - url: https://myingredion.com/.well-known/openid-configuration
+    status: 200
+    detail: Real OIDC discovery document; declares no rate-limit policy.

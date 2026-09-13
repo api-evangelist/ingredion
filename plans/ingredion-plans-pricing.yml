@@ -1,0 +1,22 @@
+generated: '2026-09-13'
+method: searched
+source: https://www.ingredion.com/na/en-us/company/expertise/myingredion
+note: >-
+  Ingredion publishes NO API plans, tiers or pricing because it publishes no API. It sells
+  food-ingredient products through negotiated B2B contracts and a login-only customer portal
+  (MyIngredion) — product pricing is quoted per account through a sales relationship, never
+  listed publicly, and there is no developer plan, free tier, trial or metered API offering
+  of any kind. The corporate sitemap (2,898 URLs) contains no pricing, developer or plans page.
+plan_count: 0
+plans: []
+pricing_model: contact-sales
+public_pricing: false
+free_tier: false
+trial: false
+evidence:
+  - url: https://www.ingredion.com/na/en-us/company/expertise/myingredion
+    status: 200
+    detail: Portal overview page; describes order management and support, names no plan or price.
+  - url: https://www.ingredion.com/sitemap.xml
+    status: 200
+    detail: 2,898 URLs, none of them a pricing, plans or developer page.

@@ -1,0 +1,89 @@
+generated: '2026-09-13'
+method: probed
+source: https://myingredion.com/.well-known/openid-configuration
+note: Read verbatim from scopes_supported in the OpenID Connect discovery document Ingredion serves on
+  its MyIngredion customer portal. Ingredion publishes no OpenAPI and no scope reference page, so there
+  is nothing to derive from and nothing to cross-check against. These are the SALESFORCE PLATFORM scope
+  names advertised by Ingredion's Experience Cloud org (00D30000000MNMR) — they are not an Ingredion-authored
+  permission model, and the descriptions below are the standard Salesforce meanings, not Ingredion copy.
+  grant_types_supported offers only authorization_code and refresh_token, so every scope here requires
+  an interactive customer sign-in.
+flow: authorization_code
+authorization_endpoint: https://myingredion.com/services/oauth2/authorize
+token_endpoint: https://myingredion.com/services/oauth2/token
+docs: null
+docs_note: No public scope or permissions reference is published by Ingredion.
+scope_count: 36
+scopes:
+- name: address
+  description: Address claim.
+- name: api
+  description: Access the Salesforce REST/SOAP data API as the signed-in user.
+- name: cdp_api
+  description: Data Cloud (CDP) API access.
+- name: cdp_calculated_insight_api
+  description: Data Cloud calculated insights API access.
+- name: cdp_identityresolution_api
+  description: Data Cloud identity resolution API access.
+- name: cdp_ingest_api
+  description: Data Cloud ingestion API access.
+- name: cdp_profile_api
+  description: Data Cloud profile API access.
+- name: cdp_query_api
+  description: Data Cloud query API access.
+- name: cdp_segment_api
+  description: Data Cloud segmentation API access.
+- name: chatbot_api
+  description: Einstein Bots API access.
+- name: chatter_api
+  description: Connect REST (Chatter) API access.
+- name: content
+  description: Salesforce CMS / content access.
+- name: custom_permissions
+  description: Return the custom permissions granted to the user.
+- name: data_cloud_user_claims
+  description: Data Cloud user claims.
+- name: eclair_api
+  description: Einstein Analytics chart (Eclair) API access.
+- name: einstein_gpt_api
+  description: Einstein GPT API access.
+- name: email
+  description: Email address and email_verified claim.
+- name: forgot_password
+  description: Password reset API access.
+- name: full
+  description: Full access to all data the signed-in user can reach.
+- name: id
+  description: Identity URL access.
+- name: interaction_api
+  description: Marketing Cloud interaction API access.
+- name: lightning
+  description: Lightning Experience application access.
+- name: mcp_api
+  description: Salesforce-declared MCP API scope (platform capability; no Ingredion MCP endpoint is published).
+- name: offline_access
+  description: Issue a refresh token.
+- name: openid
+  description: Issue an ID token (OpenID Connect core scope).
+- name: pardot_api
+  description: Account Engagement (Pardot) API access.
+- name: phone
+  description: phone_number and phone_number_verified claims.
+- name: profile
+  description: Basic profile claims (name, nickname, picture, zoneinfo, locale, updated_at).
+- name: pwdless_login_api
+  description: Passwordless login API access.
+- name: refresh_token
+  description: Issue a refresh token (Salesforce alias of offline_access).
+- name: scrt_api
+  description: Service Cloud real-time (Messaging) API access.
+- name: sfap_api
+  description: Salesforce agent/AI platform API access.
+- name: user_registration_api
+  description: Self-registration API access.
+- name: visualforce
+  description: Visualforce page access.
+- name: wave_api
+  description: CRM Analytics (Wave) API access.
+- name: web
+  description: Open a web session on the user behalf.
