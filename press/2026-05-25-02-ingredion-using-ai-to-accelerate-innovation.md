@@ -1,7 +1,9 @@
 ---
 title: Ingredion using AI to accelerate innovation
 url: https://www.foodbusinessnews.net/articles/29055-ingredion-using-ai-to-accelerate-innovation
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Ingredion" press release artificial intelligence'
 position: 2
 source: serpapi-google

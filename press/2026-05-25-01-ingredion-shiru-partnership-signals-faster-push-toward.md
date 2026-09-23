@@ -1,7 +1,9 @@
 ---
 title: Ingredion, Shiru Partnership Signals Faster Push Toward ...
 url: https://www.nutritionaloutlook.com/view/ingredion-shiru-partnership-ai-driven-functional-protein-discovery
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Ingredion" press release artificial intelligence'
 position: 1
 source: serpapi-google

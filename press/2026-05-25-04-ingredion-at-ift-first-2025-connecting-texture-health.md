@@ -1,7 +1,9 @@
 ---
 title: Ingredion at IFT FIRST 2025 — Connecting texture, health ...
 url: https://www.ingredion.com/na/en-us/be-whats-next/ift-first-2025-recap
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Ingredion" press release artificial intelligence'
 position: 4
 source: serpapi-google
